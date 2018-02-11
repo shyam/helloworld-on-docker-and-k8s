@@ -1,9 +1,5 @@
 ## Orchestrating `helloworld` container on k8s
 
-### Requisites:
-
-To be able to deploy and expose `helloworld` service and have ability to update (rolling updates) the service as new versions of container are published to the container registry.
-
 ### Assumptions:
 
 * Kubernetes (k8s) HA setup running on AWS managed via. [KOPS](https://github.com/kubernetes/kops).
