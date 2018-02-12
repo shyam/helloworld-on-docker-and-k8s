@@ -10,7 +10,7 @@ To be able to continously deliver `helloworld` microservice.
 * Kubernetes (for container orchestration)
 * Amazon Web Services (AWS) (for the underlying IaaS)
 
-### Solution
+### Solution:
 
 * [Packaging of `helloworld.war` app](docker/README.md)
 * [Setup and Orchestrating of `helloworld` service on Kubernetes](k8s/README.md) 
