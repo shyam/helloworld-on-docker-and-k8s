@@ -1,10 +1,19 @@
 ## `helloworld` on `docker` and `k8s`
 
-### Requisites:
+### Problem statement:
 
-To be able to deploy and expose `helloworld` microservice as a container and have ability to update (rolling updates) the service as new versions of container are published to the container registry.
+To be able to continously deliver `helloworld` microservice.
 
-Refer `README.md` of both [docker](docker/README.md) and [k8s](k8s/README.md) directories for the build and run instructions.
+### Infrastructure stack:
+
+* Docker (for packaging as container)
+* Kubernetes (for container orchestration)
+* Amazon Web Services (AWS) (for the underlying IaaS)
+
+### Solution
+
+* [Packaging of `helloworld.war` app](docker/README.md)
+* [Setup and Orchestrating of `helloworld` service on Kubernetes](k8s/README.md) 
 
 ### Author:
 

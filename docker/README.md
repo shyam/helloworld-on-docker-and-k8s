@@ -2,11 +2,11 @@
 
 ### Notes:
 
-`helloworld` container packages the helloworld.war and its entry point script. It depends on a custom `alpine-java` image which internally depends on `alpine` image.
+`helloworld` is a Java Sprint Boot microservice. The `helloworld` container packages the `helloworld.war` and its entry point script `entrypoint.sh`. It depends on a custom `alpine-java` image which internally depends on `alpine` image.
 
-The rationale of having `alpine-java` as separate container within our registry is to have an official image without referring unofficial 3rd party repos. It enables us to control the JVM updates and ensure security.
+Although `alpine-java` is forked from an 3rd party, the rationale of having `alpine-java` as separate container within our registry is to have an official internal image. It enables us to selectively control the JVM updates and ensure security.
 
-The `Dockerfile` sources and other artifacts for both the containers can be found in this directory. 
+The `Dockerfile` sources and other artifacts for both the containers can be found within the respective directories.
 
 ### Steps to build, tag and push:
 
