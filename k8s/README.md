@@ -186,6 +186,8 @@ Finally visiting the ELB URL should yield a screen similar to the one below.
 
 ![Demo/Image](k8s-helloworld-elb-https.png) 
 
+A DNS CNAME record can be added against the ELB URL so that the SSL validation errors not occur.
+
 ### Updating `helloworld` Deployment:
 
 Whenever a new version of the application is to updated, a new tag of the container is obtained and pushed to the registry.
@@ -237,7 +239,7 @@ spec:
   type: LoadBalancer
 ````
 
-Now applying the configuration will instantiate the new containers and decomission the older containers. The service (loadbalancer) is automatically pointed to the new containers. Note that the service will remain unchanged whereas the deployment will be reconfiugred.
+Now applying the configuration will instantiate the new containers and decomission the older containers. The service (loadbalancer) is automatically pointed to the new containers. Note that the service will remain unchanged whereas the deployment will be reconfigured.
 
 ````
 $ kubectl apply -f helloworld-deployment-and-service.yml
@@ -250,7 +252,7 @@ $ kubectl rollout status deployment/helloworld-deployment
 deployment "helloworld-deployment" successfully rolled out
 ````
 
-By default the strategy employed by k8s for updating the container is to do rolling updates. ( A new replication controller is created and increases the replicas with new image, while simultaneouly the existing replication controller will decrease the replicas with current/older image ).
+By default the strategy employed by k8s for updating the container is to do rolling updates. (A new replication controller is created and increases the replicas with new image, while simultaneouly the existing replication controller will decrease the replicas with current/older image).
 
 The following command will help us understand the rollout history for a deployment.
 
@@ -288,6 +290,6 @@ Pod Template:
   Volumes:  <none>
 ````
 
-Kubernetes (k8s) also supports recreate updates ( kill existing and deploy new ) and rollbacks.
+Kubernetes (k8s) also supports recreate update strategy (kill existing containers first and deploy new containers) and rollbacks.
 
 Based on the above, it would be fairly easier to model a Continuous Deployment system to manage the delivery of software.
