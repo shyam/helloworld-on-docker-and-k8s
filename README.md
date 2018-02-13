@@ -2,7 +2,7 @@
 
 ### Problem statement:
 
-To be able to continously deliver `helloworld` microservice.
+To be able to continously deliver `helloworld` microservice on a highly available setup on AWS.
 
 ### Infrastructure stack:
 

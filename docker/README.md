@@ -2,7 +2,9 @@
 
 ### Notes:
 
-`helloworld` is a Java Sprint Boot microservice. The `helloworld` container packages the `helloworld.war` and its entry point script `entrypoint.sh`. It depends on a custom `alpine-java` image which internally depends on `alpine` image.
+`helloworld` is a [Spring Boot](https://projects.spring.io/spring-boot/) web application example using embedded Tomcat + JSP template and packaged as an executable WAR file ([source](https://www.mkyong.com/spring-boot/spring-boot-hello-world-example-jsp/)).
+
+The `helloworld` container packages the `helloworld.war` and its entry point script `entrypoint.sh`. It depends on a custom `alpine-java` image which internally depends on `alpine` image.
 
 Although `alpine-java` is forked from an 3rd party, the rationale of having `alpine-java` as separate container within our registry is to have an official internal image. It enables us to selectively control the JVM updates and ensure security.
 
